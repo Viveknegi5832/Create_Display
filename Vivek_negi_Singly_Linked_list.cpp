@@ -18,7 +18,7 @@ Node *head,*newnode,*temp;
   {
 
     
-    head=0;
+    head=Null;
     
     
     int ch=1;
@@ -27,9 +27,9 @@ Node *head,*newnode,*temp;
         newnode = new Node();
         cout<<"Enter the data: \n";
         cin>>newnode->data;
-        newnode->next=0;
+        newnode->next=Null;
         
-        if(head==0)
+        if(head==Null)
         {
             head=temp=newnode;
         
@@ -53,7 +53,7 @@ Node *head,*newnode,*temp;
         
     
      temp=head;
-     while(temp!=0)
+     while(temp!=Null)
      {
          cout<<temp->data<<" ";
          temp=temp->next;
