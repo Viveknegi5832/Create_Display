@@ -1,47 +1,59 @@
 #include<iostream> 
 using namespace std;
  class SinglyLinkedList 
-{ class Node
- { public: 
-int data; 
-Node *next; }; 
-public: 
-Node *head,*newnode,*temp; 
-void create()
- { head=0; int ch=1;
- while(ch==1) 
-{ newnode = new Node();
- cout<<"Enter the data: ";
- cin>>newnode->data; 
-newnode->next=0;
- if(head==0) 
-{ head=temp=newnode; 
-} 
-else 
-{ temp->next=newnode;
- temp=newnode; }
- cout<<"1 for continue and 0 for exit \n";
- cin>>ch; } } 
+{ 
+class Node
+ { 
+    public: 
+    int data; 
+    Node *next;
+ }; 
+    public: 
+    Node *head,*newnode,*temp; 
+    void create()
+ { 
+    head=0; 
+    int ch=1;
+    while(ch==1) 
+     {
+        newnode = new Node();
+        cout<<"Enter the data: ";
+        cin>>newnode->data; 
+        newnode->next=0;
+      if(head==0) 
+    {
+      head=temp=newnode; 
+     } 
+     else 
+    {
+      temp->next=newnode;
+      temp=newnode;
+     }
+     cout<<"1 for continue and 0 for exit \n";
+     cin>>ch;
+   } 
+  } 
 void insert_at_Beginning()
 {
   
   newnode=new Node();
-  cout<<"enter the data:  ";
+  cout<<"enter the data:";
   cin>>newnode->data;
   newnode->next=head;
   head=newnode;
- cout<<"Inserted! \n";
+  cout<<"Inserted! \n";
 }
 void insert_at_end()
 {
   newnode = new Node();
- cout<<"enter the data:";
- cin>>newnode->data;
+  cout<<"enter the data:";
+  cin>>newnode->data;
   temp=head;
   while(temp->next!=0)
 {
    temp=temp->next;
-}temp->next=newnode;
+} 
+ temp->next=newnode;
 newnode->next=0;
 cout<<"Inserted! \n";
 }
@@ -98,6 +110,8 @@ default: cout<<"wrong input \n";
 break; 
  }
  cout<<"y for continue \n"; 
-cin>>ch; }while(ch=='y'); 
-return 0; } 
+cin>>ch; 
+}while(ch=='y'); 
+return 0;
+ } 
     
