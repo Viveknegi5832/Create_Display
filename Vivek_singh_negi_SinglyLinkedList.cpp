@@ -60,8 +60,6 @@ cout<<"Deleted in given location!\n";
 
 
 
-
-
 void delete_at_beginning()
 {
    temp=head;
@@ -69,7 +67,12 @@ void delete_at_beginning()
    delete temp;
    cout<<"Deleted at beginning! \n";
 }
+
+
+
+
 void delete_at_end()
+
 {
    temp=head;
    while(temp->next!=newnode)
@@ -82,6 +85,7 @@ void delete_at_end()
     cout<<"Deleted at end! \n";
 }
 void insert_at_Beginning()
+
 {
   
   newnode=new Node();
@@ -92,6 +96,7 @@ void insert_at_Beginning()
   cout<<"Inserted! \n";
 }
 void insert_at_end()
+
 {
   newnode = new Node();
   cout<<"enter the data:";
@@ -106,6 +111,7 @@ newnode->next=NULL;
 cout<<"Inserted! \n";
 }
 void insert_in_between()
+
 {
   int location;
   int i=1;
@@ -127,6 +133,22 @@ cout<<"Inserted! \n";
 
 }
 
+void count()
+{
+ int count=0;
+ temp=head;
+ while(temp->next!=NULL)
+{
+  temp=temp->next;
+++count;
+}
+cout<<"no. of nodes ="<<count+1<<endl;
+
+}
+
+
+
+
 void display() 
 { temp=head; 
 while(temp!=NULL)
@@ -141,7 +163,7 @@ int main()
 char ch;
  SinglyLinkedList list; 
 do{ 
-cout<<"\n 1.create \n 2.display \n 3.insert at beginning \n 4.insert at end \n 5.insert in between \n 6.delete at end \n 7.delete at beginning \n 8.delete in any location\n";
+cout<<"\n 1.create \n 2.display \n 3.insert at beginning \n 4.insert at end \n 5.insert in between \n 6.delete at end \n 7.delete at beginning \n 8.delete in any location\n 9.count nodes\n";
  cout<<"enter your choice:";
 cin>>n; 
 switch(n) 
@@ -167,8 +189,11 @@ case 7:
          list.delete_at_beginning();
          break;
 case 8:  list.delete_in_between();
+         break;
+case 9:  
+         list.count();
          break; 
-case 9:
+case 10:
          exit(0); 
  }
  cout<<"want to continue (y/n) \n"; 
