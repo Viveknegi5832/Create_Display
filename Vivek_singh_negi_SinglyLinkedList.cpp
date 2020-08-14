@@ -132,6 +132,32 @@ temp->next=newnode;
 cout<<"Inserted! \n";
 
 }
+void search()
+{
+  int n, count=0,flag=0;
+  cout<<"Enter the value to be searched:";
+  cin>>n;
+  temp=head;
+  while(temp!=NULL)
+{
+   ++count;
+
+  if(temp->data==n)
+{
+  flag=1;
+  break;
+
+}
+temp=temp->next;
+
+
+}
+if(flag==1)
+cout<<"data found at location:"<<count<<"\n";
+else
+cout<<"not found: \n";
+}
+
 
 void count()
 {
@@ -193,7 +219,10 @@ case 8:  list.delete_in_between();
 case 9:  
          list.count();
          break; 
-case 10:
+case 10: 
+         list.search();
+         break;
+case 11:
          exit(0); 
  }
  cout<<"want to continue (y/n) \n"; 
