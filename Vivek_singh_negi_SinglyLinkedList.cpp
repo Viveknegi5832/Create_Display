@@ -12,15 +12,15 @@ class Node
     Node *head,*newnode,*temp; 
     void create()
  { 
-    head=0; 
+    head=Null; 
     int ch=1;
     while(ch==1) 
      {
         newnode = new Node();
         cout<<"Enter the data: ";
         cin>>newnode->data; 
-        newnode->next=0;
-      if(head==0) 
+        newnode->next=Null;
+      if(head==Null) 
     {
       head=temp=newnode; 
      } 
@@ -49,12 +49,12 @@ void insert_at_end()
   cout<<"enter the data:";
   cin>>newnode->data;
   temp=head;
-  while(temp->next!=0)
+  while(temp->next!=Null)
 {
    temp=temp->next;
 } 
  temp->next=newnode;
-newnode->next=0;
+newnode->next=Null;
 cout<<"Inserted! \n";
 }
 void insert_between()
@@ -81,7 +81,7 @@ cout<<"Inserted! \n";
 
 void display() 
 { temp=head; 
-while(temp!=0)
+while(temp!=Null)
  { cout<<temp->data<<" ";
  temp=temp->next; 
 } 
