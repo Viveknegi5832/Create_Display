@@ -210,7 +210,26 @@ cout<<"no. of nodes ="<<count+1<<endl;
 
 }
 
+/******REVERSE_LINKEDLIST*******/
 
+
+void reverse()
+{
+
+  temp=head->next;
+  head->next=NULL;
+  newnode=head;
+  while(temp!=NULL)
+{
+   temp1=temp;
+   temp=temp->next;
+   temp1->next=head;
+   head=temp1;
+}
+  cout<<"Reversed! \n";
+  display();
+
+}
 
 /*******DISPLAY_THE_NODES*********/
 
@@ -229,7 +248,7 @@ int main()
 char ch;
  SinglyLinkedList list; 
 do{ 
-cout<<"\n 1.create \n 2.display \n 3.insert at beginning \n 4.insert at end \n 5.insert in between \n 6.delete at end \n 7.delete at beginning \n 8.delete in any location\n 9.count nodes\n 10.search node\n";
+cout<<"\n 1.create \n 2.display \n 3.insert at beginning \n 4.insert at end \n 5.insert in between \n 6.delete at end \n 7.delete at beginning \n 8.delete in any location\n 9.count nodes\n 10.search node\n 11.Reverse LinkedList\n";
  cout<<"enter your choice:";
 cin>>n; 
 switch(n) 
@@ -263,6 +282,9 @@ case 10:
          list.search();
          break;
 case 11:
+         list.reverse();
+         break;
+case 12:
          exit(0); 
  }
  cout<<"want to continue (y/n) \n"; 
