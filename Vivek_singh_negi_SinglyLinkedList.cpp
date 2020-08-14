@@ -15,7 +15,7 @@ class Node
     Node *next;
  }; 
     public: 
-    Node *head,*newnode,*temp; 
+    Node *head,*newnode,*temp,*temp1; 
     void create()
  { 
     head=NULL; 
@@ -39,6 +39,29 @@ class Node
      cin>>ch;
    } 
   } 
+void delete_in_between()
+{
+   int loc,i=1;
+   cout<<"enter the location of data you want to delete\n";
+   cin>>loc;
+   temp=head;
+   while(i<loc-1)
+{
+  temp=temp->next;
+  i++;
+  
+}temp1=temp->next;
+temp->next=temp->next->next;
+delete temp1;
+cout<<"Deleted in given location!\n";
+
+
+}
+
+
+
+
+
 void delete_at_beginning()
 {
    temp=head;
@@ -118,8 +141,9 @@ int main()
 char ch;
  SinglyLinkedList list; 
 do{ 
-cout<<"\n 1.create \n 2.display \n 3.insert at beginning \n 4.insert at end \n 5.insert in between \n 6.delete at end \n 7.delete at beginning \n";
- cin>>n; 
+cout<<"\n 1.create \n 2.display \n 3.insert at beginning \n 4.insert at end \n 5.insert in between \n 6.delete at end \n 7.delete at beginning \n 8.delete in any location\n";
+ cout<<"enter your choice:";
+cin>>n; 
 switch(n) 
 { case 1:
           list.create(); 
@@ -142,7 +166,9 @@ case 6:
 case 7:
          list.delete_at_beginning();
          break;
-case 8:
+case 8:  list.delete_in_between();
+         break; 
+case 9:
          exit(0); 
  }
  cout<<"want to continue (y/n) \n"; 
