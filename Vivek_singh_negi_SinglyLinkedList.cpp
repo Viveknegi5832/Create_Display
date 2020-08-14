@@ -1,3 +1,9 @@
+
+//Vivek_Singh_Negi
+//19_78066
+
+
+
 #include<iostream> 
 using namespace std;
  class SinglyLinkedList 
@@ -57,7 +63,7 @@ void insert_at_end()
 newnode->next=Null;
 cout<<"Inserted! \n";
 }
-void insert_between()
+void insert_in_between()
 {
   int location;
   int i=1;
@@ -109,7 +115,7 @@ case 4:
          list.insert_at_end();
          break;
 case 5: 
-         list.insert_between();
+         list.insert_in_between();
          break;
 case 6:
          exit(0); 
