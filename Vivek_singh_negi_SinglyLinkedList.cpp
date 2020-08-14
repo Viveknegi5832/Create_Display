@@ -16,6 +16,13 @@ class Node
  }; 
     public: 
     Node *head,*newnode,*temp,*temp1; 
+
+
+
+/********CREATING_NODES*******/
+
+
+
     void create()
  { 
     head=NULL; 
@@ -39,6 +46,11 @@ class Node
      cin>>ch;
    } 
   } 
+
+
+/*******DELETE_IN_BETWEEN*********/
+
+
 void delete_in_between()
 {
    int loc,i=1;
@@ -59,6 +71,8 @@ cout<<"Deleted in given location!\n";
 }
 
 
+/*******DELETE_AT_BEGINNING******/
+
 
 void delete_at_beginning()
 {
@@ -69,6 +83,8 @@ void delete_at_beginning()
 }
 
 
+
+/*******DELETE_AT_END********/
 
 
 void delete_at_end()
@@ -84,6 +100,11 @@ void delete_at_end()
     newnode=temp;
     cout<<"Deleted at end! \n";
 }
+
+
+/*******INSERT_AT_BEGINNING********/
+
+
 void insert_at_Beginning()
 
 {
@@ -95,6 +116,12 @@ void insert_at_Beginning()
   head=newnode;
   cout<<"Inserted! \n";
 }
+
+
+
+/*******INSERT_AT_END******/
+
+
 void insert_at_end()
 
 {
@@ -110,6 +137,11 @@ void insert_at_end()
 newnode->next=NULL;
 cout<<"Inserted! \n";
 }
+
+
+/*******INSERT_IN_BETWEEN******/
+
+
 void insert_in_between()
 
 {
@@ -132,6 +164,10 @@ temp->next=newnode;
 cout<<"Inserted! \n";
 
 }
+
+/********SEARCH_A_NODE******/
+
+
 void search()
 {
   int n, count=0,flag=0;
@@ -158,6 +194,8 @@ else
 cout<<"not found: \n";
 }
 
+/*******COUNT_THE_NODES********/
+
 
 void count()
 {
@@ -173,6 +211,8 @@ cout<<"no. of nodes ="<<count+1<<endl;
 }
 
 
+
+/*******DISPLAY_THE_NODES*********/
 
 
 void display() 
