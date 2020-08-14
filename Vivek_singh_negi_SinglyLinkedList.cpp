@@ -96,20 +96,25 @@ do{
 cout<<"\n 1.create \n 2.display \n 3.insert at beginning \n 4.insert at end \n 5.insert in between \n";
  cin>>n; 
 switch(n) 
-{ case 1: list.create(); 
-break; 
-case 2: list.display(); 
-break;
-case 3: list.insert_at_Beginning();
-break; 
-case 4: list.insert_at_end();
-break;
-case 5: list.insert_between();
-break;
-default: cout<<"wrong input \n";
-break; 
+{ case 1:
+          list.create(); 
+          break; 
+case 2:
+         list.display(); 
+         break;
+case 3:
+         list.insert_at_Beginning();
+         break; 
+case 4: 
+         list.insert_at_end();
+         break;
+case 5: 
+         list.insert_between();
+         break;
+case 6:
+         exit(0); 
  }
- cout<<"y for continue \n"; 
+ cout<<"want to continue (y/n) \n"; 
 cin>>ch; 
 }while(ch=='y'); 
 return 0;
