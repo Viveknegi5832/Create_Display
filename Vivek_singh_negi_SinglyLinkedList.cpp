@@ -39,6 +39,13 @@ class Node
      cin>>ch;
    } 
   } 
+void delete_at_beginning()
+{
+   temp=head;
+   head=head->next;
+   delete temp;
+   cout<<"Deleted at beginning! \n";
+}
 void delete_at_end()
 {
    temp=head;
@@ -111,7 +118,7 @@ int main()
 char ch;
  SinglyLinkedList list; 
 do{ 
-cout<<"\n 1.create \n 2.display \n 3.insert at beginning \n 4.insert at end \n 5.insert in between \n 6.delete at end \n";
+cout<<"\n 1.create \n 2.display \n 3.insert at beginning \n 4.insert at end \n 5.insert in between \n 6.delete at end \n 7.delete at beginning \n";
  cin>>n; 
 switch(n) 
 { case 1:
@@ -133,6 +140,9 @@ case 6:
          list.delete_at_end();
          break;
 case 7:
+         list.delete_at_beginning();
+         break;
+case 8:
          exit(0); 
  }
  cout<<"want to continue (y/n) \n"; 
