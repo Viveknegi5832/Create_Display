@@ -25,6 +25,14 @@ void insert_in_between();
 void delete_at_beginning();
 void delete_at_end();
 void delete_in_between();
+
+~Doubly_LinkedList()
+{
+ cout<<"\n MEMORY_RELEASED!!!!\n";
+}
+
+
+
 };
 
 /***********CREATE_A_NODE***********/
