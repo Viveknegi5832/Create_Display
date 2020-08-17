@@ -27,7 +27,7 @@ class Circular_SLL
    Node *next;
 };
 public:
-Node *temp,*tail,*newnode,*temp1;
+Node *temp,*tail,*newnode;
 
 Circular_SLL()
 {
