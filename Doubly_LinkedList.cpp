@@ -25,6 +25,8 @@ void insert_in_between();
 void delete_at_beginning();
 void delete_at_end();
 void delete_in_between();
+void search();
+void count();
 
 ~Doubly_LinkedList()
 {
@@ -216,6 +218,53 @@ cout<<"\n Deleted at given location!\n";
   }
 }
 
+/***********SEARCH_AN_ELEMENT***********/
+
+void Doubly_LinkedList :: search()
+{
+   temp=new Node();
+   int count=0,flag=0;
+   cout<<"\n Enter the node you want to search:";
+   cin>>temp->data;
+   temp1=head;
+   while(temp1!=NULL)
+{
+   ++count;
+   if(temp->data==temp1->data)
+{
+    flag=1;
+    break;
+   
+   }
+temp1=temp1->next;
+
+}
+if(flag==1)
+cout<<"\n found node at position:"<<count;
+else
+cout<<"\n entered node is not present:";
+
+
+   
+
+}
+
+/**************COUNT_THE_NODES*************/
+
+void Doubly_LinkedList :: count()
+
+
+{
+   int count=0;
+   temp=head;
+   while(temp!=NULL)
+   {
+        count++;
+        temp=temp->next;
+}
+cout<<"\n Total nodes:"<<count;
+
+}
 
 
 
@@ -228,7 +277,7 @@ int main()
   char ch1;
   do{
      int a;
-     cout<<"\n 1.create a node\n 2.display\n 3.insert at beginning\n 4.insert at end\n 5.insert in between\n 6.delete at beginning\n 7.delete at end\n 8.delete in between\n";
+     cout<<"\n 1.create a node\n 2.display\n 3.insert at beginning\n 4.insert at end\n 5.insert in between\n 6.delete at beginning\n 7.delete at end\n 8.delete in between\n 9.search a node\n 10.count the nodes\n";
      cin>>a;
     
     
@@ -259,6 +308,12 @@ int main()
                list.delete_in_between();
                break;
        case 9:
+               list.search();
+               break;
+       case 10:
+               list.count();
+               break;
+       case 11:
                exit(0);
     
     
