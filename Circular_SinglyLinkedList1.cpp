@@ -78,11 +78,8 @@ void Circular_SLL :: create()
   cout<<"\n want to enter more nodes (y/n)";
   cin>>ch;
 }
-  
-
-  
+ 
 }
-
 
 
 /********INSERT_AT_END***********/
@@ -238,19 +235,19 @@ void Circular_SLL :: delete_in_between()
    delete_at_end();
 }
 else
-{
-   newnode=temp->next;
-   temp->next=newnode->next;
-   delete newnode;
-   cout<<"\n Deleted!!";
-}
-}
-  
-  
+   {
+     newnode=temp->next;
+     temp->next=newnode->next;
+     delete newnode;
+     cout<<"\n Deleted!!";
+   }
+}  
 
 }
 
 /***************SEARCH******************/
+
+
 void Circular_SLL :: search()
 {
    int count=0,flag=0;
@@ -267,9 +264,7 @@ void Circular_SLL :: search()
       flag=1;
       break;
    }
-
    
-    
 }while(temp!=tail);
 
 if(flag==1)
@@ -280,6 +275,8 @@ cout<<"not found!!";
 }
 
 /**********COUNT*************/
+
+
 void Circular_SLL :: count()
 
 {
@@ -293,9 +290,7 @@ void Circular_SLL :: count()
 
 cout<<"Total elements:"<<count;
 
-  
-
-}
+  }
 
 
 /*************DISPLAY**************/
@@ -308,11 +303,9 @@ void Circular_SLL :: display()
 {
    temp=tail;
 
- 
-do
-{ 
-  temp=temp->next;
-			cout<<temp->data<<" ";
+      do{ 
+        temp=temp->next;
+	cout<<temp->data<<" ";
   
  	}while(temp!=tail);
     
@@ -331,38 +324,27 @@ void Circular_SLL :: reverse()
 if(isEmpty())
 cout<<"\n List is empty cannot be reversed!";
 else
-if(tail->next==tail)
-cout<<"\n Only one node is present!";
+     if(tail->next==tail)
+     cout<<"\n Only one node is present!";
 else
-  if((!isEmpty())&&(tail->next!=tail))
+     if((!isEmpty())&&(tail->next!=tail))
 { 
-  Node *temp1;
-  temp=tail->next;
-  temp1=temp->next;
-  while(temp!=tail)
-{
-   newnode=temp;
-   temp=temp1;
-   temp1=temp1->next;
-   temp->next=newnode;
+      Node *temp1;
+      temp=tail->next;
+      temp1=temp->next;
+      while(temp!=tail)
+   {
+       newnode=temp;
+       temp=temp1;
+       temp1=temp1->next;
+       temp->next=newnode;
+   }
+     temp1->next=temp;
+     tail=temp1;
+     cout<<"\n Reversed!";
+   
+  }
 }
- temp1->next=temp;
- tail=temp1;
- cout<<"\n Reversed!";
-  
-}
-
-
-
-  
-
-  
- 
-}
-
-
-
-
 
 int main()
 
