@@ -1,19 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #include<iostream>
 using namespace std;
 
@@ -50,7 +34,7 @@ Circular_SLL()
 }
   
 }
-
+bool isEmpty();
 void create();
 void display();
 void insert_at_end();
@@ -61,10 +45,23 @@ void delete_at_end();
 void delete_in_between();
 void search();
 void count();
+void reverse();
 
    
 };
 
+
+/*********isEmpty*********/
+
+
+bool Circular_SLL :: isEmpty()
+{
+   if(tail==NULL)
+   return true;
+   else
+   return false;
+   
+}
 
 /**********CREATE*********/
 
@@ -112,12 +109,18 @@ cout<<"Inserted!!";
 /***********INSERT_AT_BEGINNING**********/
 void Circular_SLL :: insert_at_beginning()
 {
+
+   if(isEmpty())
+   insert_at_end();
+   else
+{
    newnode= new Node();
    cout<<"\n enter the data:";
    cin>>newnode->data;
    newnode->next=tail->next;
    tail->next=newnode;
    cout<<"\n Inserted!";
+}
 
 
 }
@@ -126,12 +129,14 @@ void Circular_SLL :: insert_at_beginning()
 
 void Circular_SLL :: insert_in_between()
 {
+  if(isEmpty())
+  insert_at_end();
+  else
+{
   int loc,a=1;
   cout<<"\n Enter the location you want to add data:";
   cin>>loc;
-  newnode=new Node();
-  cout<<"\n Enter the data:";
-  cin>>newnode->data;
+  
   temp=tail->next;
   while(a<loc-1)
 {
@@ -139,12 +144,22 @@ void Circular_SLL :: insert_in_between()
   a++;
   
 }
-newnode->next=temp->next;
-temp->next=newnode;
+ if(temp==tail)
+ insert_at_end();
+ else
+  {
+   newnode=new Node();
+   cout<<"\n Enter the data:";
+   cin>>newnode->data;
 
 
-cout<<"\n Inserted!!";
+   newnode->next=temp->next;
+   temp->next=newnode;
 
+   cout<<"\n Inserted!!";
+  }
+
+}
 }
 
 
@@ -175,7 +190,7 @@ cout<<"\n Deleted!";
 void Circular_SLL :: delete_at_end()
 {
    temp=tail->next;
-   if(temp==tail)
+   if(isEmpty())
 {
     delete temp;
     tail=NULL;
@@ -284,23 +299,66 @@ cout<<"Total elements:"<<count;
 
 void Circular_SLL :: display()
 {
-   
-   temp=tail->next;
-	 	
-		do
+   if(isEmpty())
+   cout<<"\n List is Empty!!";
+   else
 {
-			
-			cout<<temp->data<<" ";
+   temp=tail;
+
+ 
+do
+{ 
   temp=temp->next;
+			cout<<temp->data<<" ";
   
-		}while(temp!=tail);
-cout<<temp->data;
+ 	}while(temp!=tail);
+    
     cout<<"\n";
+    }
  
 
 }
 
+/***********REVERSE***************/
+ 
+void Circular_SLL :: reverse()
+{
+
+   
+if(isEmpty())
+cout<<"\n List is empty cannot be reversed!";
+else
+if(tail->next==tail)
+cout<<"\n Only one node is present!";
+else
+  if((!isEmpty())&&(tail->next!=tail))
+{ 
+  Node *temp1;
+  temp=tail->next;
+  temp1=temp->next;
+  while(temp!=tail)
+{
+   newnode=temp;
+   temp=temp1;
+   temp1=temp1->next;
+   temp->next=newnode;
+}
+ temp1->next=temp;
+ tail=temp1;
+ cout<<"\n Reversed!";
   
+}
+
+
+
+  
+
+  
+ 
+}
+
+
+
 
 
 int main()
@@ -312,7 +370,7 @@ int main()
     
     do{
      
-        cout<<"\n 1.create \n 2.display \n 3.Insert at end\n 4.Insert at beginning\n 5.insert in between\n 6.delete at beginning\n 7.delete at end\n 8.delete in between\n 9.search\n 10.count nodes\n";
+        cout<<"\n 1.create \n 2.display \n 3.Insert at end\n 4.Insert at beginning\n 5.insert in between\n 6.delete at beginning\n 7.delete at end\n 8.delete in between\n 9.search\n 10.count nodes\n 11.reverse List\n";
         cin>>a;
         switch(a)
         {
@@ -347,6 +405,9 @@ int main()
                   list.count();
                   break;
           case 11:
+                  list.reverse();
+                  break;
+          case 12:
                   exit(0);
         
         }
@@ -367,3 +428,19 @@ int main()
 
 
     
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
