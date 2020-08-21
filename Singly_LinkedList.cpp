@@ -30,7 +30,7 @@ class Node
     {
         temp=head;
         cout<<" Deallocating memory....\n";
-        while(temp!=Null)
+        while(temp!=NULL)
           {
            temp1=temp;
            delete temp1;
@@ -140,7 +140,7 @@ void  SinglyLinkedList :: delete_at_end()
 /*******INSERT_AT_BEGINNING********/
 
 
-void SinglyLinkedList :: insert_at_Beginning()
+void SinglyLinkedList :: insert_at_beginning()
 
 {
   
@@ -157,7 +157,7 @@ void SinglyLinkedList :: insert_at_Beginning()
 /*******INSERT_AT_END******/
 
 
-void SinglyLinkedList ::   insert_at_end()
+void SinglyLinkedList :: insert_at_end()
 
 { 
    newnode = new Node();
@@ -294,7 +294,7 @@ case 2:
          list.display(); 
          break;
 case 3:
-         list.insert_at_Beginning();
+         list.insert_at_beginning();
          break; 
 case 4: 
          list.insert_at_end();
