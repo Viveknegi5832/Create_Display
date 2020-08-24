@@ -1,7 +1,8 @@
 
 
 
-
+//Vivek_Singh_Negi
+//19_78066
 
 
 
@@ -27,7 +28,7 @@ class Polynomial
     
     Node *head,*temp,*newnode,*tail;
     
-    Polynomial() //Constructor for declaring head as NULL
+    Polynomial() //Constructor 
     {
        head=NULL;
     }
