@@ -1,9 +1,8 @@
 #include <iostream>
 using namespace std;
 
-/******************************************
-	OrderedLinkedList Class
-*******************************************/
+
+
 class OrderedLL
 {
 	class Node
@@ -14,7 +13,7 @@ class OrderedLL
 	
   public:
 
-  Node *head,*temp2, *temp, *newnode, *tail;
+  Node *head, *temp, *newnode, *tail;
 
   
 	
@@ -53,16 +52,16 @@ OrderedLL merge(OrderedLL &list)
 	 {
     
 		    OrderedLL list1;
-	    	list1 = *this;
-	    temp = list.head;
-	    	while (temp != NULL)
-	     	{
-	         		list1.insert(temp->data);
-		         	temp = temp->next;
-		     }
+	    	    list1 = *this;
+	            temp = list.head;
+	            while (temp != NULL)
+	           	{
+	                    list1.insert(temp->data);
+		            temp = temp->next;
+		        }
     
 		   return list1;
-  	}
+  	 }
 
 
 
@@ -70,37 +69,40 @@ OrderedLL merge(OrderedLL &list)
 };
 
 	/*********************isEmpty*************************/
-	bool OrderedLL :: isEmpty()
-	{
+	
+
+        bool OrderedLL :: isEmpty()
+	     {
 		if (head == NULL)
 			return true;
 		else
 			return false;
-	}
+	     }
 
 	/************INSERT********************/
-	void OrderedLL :: insert(int data)
-	{
+	
+        void OrderedLL :: insert(int data)
+	    {
 		newnode = new Node();
 		newnode->data = data;
 		newnode->next = NULL;
-   		if (isEmpty())
-	    	{
+   		        if (isEmpty())
+	    	        {
 	       		head = tail = newnode;
 	   		}
-		  else
-	   	{
-	     		Node *temp1;
+		       else
+	   	        {
+	     		     Node *temp1;
 			     if (newnode->data < head->data)
 			      {
 		         		newnode->next = head;
 			          	head = newnode;
-		       }
+		              }
 			else if (newnode->data > tail->data)
 			      {
 		       		tail->next = newnode;
 			       	tail = newnode;
-		      	}
+		      	      }
 	     		else
 			     {
 		      		temp = head;
@@ -113,16 +115,19 @@ OrderedLL merge(OrderedLL &list)
 				           		newnode->next = temp;
 					           	temp1->next = newnode;
 					         }
-			        	}
-	     		}
+			        }
+	     		     }
 
       
-	   	}
-	}
+	   	          }
+
+	    }
 	
 	/******************DELETE_FUNCTION************************/
-	void OrderedLL :: Delete(int data)
-	{
+	
+
+        void OrderedLL :: Delete(int data)
+	   {
 		bool contains;
 		if (!isEmpty())
 		{
@@ -154,17 +159,18 @@ OrderedLL merge(OrderedLL &list)
 							           newnode->next = NULL;
 							           tail = newnode;
 						         }
-					      	else
+					      	      else
 						        {
 							           newnode -> next = temp->next;
 							           delete temp;
 							           break;
 						         }
-				       	}
-				     	else
+				              }
+				     	           
+                                                    else
 						    contains = false;
 
-				    	 newnode = temp;
+				    	    newnode = temp;
 					    temp = temp->next;
 				}
 				 if(!contains)
@@ -178,22 +184,23 @@ OrderedLL merge(OrderedLL &list)
   
 	
 	/*****************PRINT****************************/
-	void OrderedLL::  print()
-	{
+	
+        void OrderedLL::  print()
+	   {
 		  cout << "\n ";
 		  if (isEmpty())
-			 cout << "Linked list is empty";
- else
- {
-	    	temp = head;
-		    while (temp!= NULL)
+                  cout << "Linked list is empty";
+                  else
+                   {
+	    	      temp = head;
+		      while (temp!= NULL)
 		     {
-		        	cout<<temp->data<<" ";
-          temp=temp->next;
-	      	}
+		               cout<<temp->data<<" ";
+                               temp=temp->next;
+	      	     }
 		        cout << endl;
- 	}
-}
+ 	           }
+           } 
 
 
 /***********CREATING_LIST********************************/
