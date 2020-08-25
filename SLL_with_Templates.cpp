@@ -1,10 +1,11 @@
-#include <iostream>
+//Vivek_Singh_negi
+//19_78066
 
+
+
+#include <iostream>
 using namespace std;
 
-/******************************************
-	SinglyLinkedList Class
-*******************************************/
 
 template <typename T>
  class Node
