@@ -1,3 +1,9 @@
+//Vivek_singh_negi
+//19_78066
+
+
+
+
 #include <iostream>
 using namespace std;
 
@@ -21,13 +27,13 @@ class DoublyLinkedList
   public:
 
 
-	DoublyLinkedList()
+	DoublyLinkedList() //Constructor
 	 {
     		head = NULL;
   	}
 
 
-	~DoublyLinkedList()
+	~DoublyLinkedList() //Destructor
 	{
 	     	temp = head;
      		while (temp!= NULL)
@@ -42,7 +48,6 @@ class DoublyLinkedList
 	bool isEmpty();
 	int  count();
 	void search();
-	void reverse();
 	void insert_at_end();
 	void insert_at_beginning();
 	void insert_in_between();
@@ -51,7 +56,6 @@ class DoublyLinkedList
 	void delete_in_between();
 	void delete_data();
 	void display();
-	DoublyLinkedList<T> operator+(DoublyLinkedList<T> &list);
 };
 
 /***********isEmpty************/
@@ -371,8 +375,8 @@ void DoublyLinkedList<T>::search()
   
 int main()
 {
-	int choice, choice1;
-	char ch, ch1='y';
+	int choice;
+	char ch='y';
 	DoublyLinkedList<int> list;
 	cout << "\n Doubly Linked list  \n";
 	do
@@ -381,46 +385,47 @@ int main()
 		cout << "Enter your choice : ";
 		cin >> choice;
 		switch (choice)
-{
+                   {
+
 			 	case 1:
 			           		list.insert_at_beginning();
 			           		break;
 			 	case 2:
 		           			list.insert_at_end();
-				 	          break;
+				 	        break;
 		 		case 3:
-					          list.insert_in_between();
+					        list.insert_in_between();
 				           	break;
-		  case 4:
-		 				         list.delete_at_beginning();
-			 	  	        	break;
-			 case 5:
-			           list.delete_at_end();
-				 	         break;
-			 case 6:
-				          list.delete_in_between();
-				          break;
-			 case 7:
-			           list.delete_data();
-				          break;
-		  case 8:
-             list.display();
-             break;
-			 case 9:
-            list.count();
-            cout<<"\n nodes :"<<list.count();
-            break;
-   case 10:
-            list.search();
-            break;
-   case 11:
-            exit(0);
+		                case 4:
+		 				list.delete_at_beginning();
+			 	  	        break;
+			        case 5:
+			                        list.delete_at_end();
+				 	        break;
+			        case 6:
+				                list.delete_in_between();
+				                break;
+			        case 7:
+			                        list.delete_data();
+				                break;
+		                case 8:
+                                                list.display();
+                                                break;
+			        case 9:
+                                                list.count();
+                                                cout<<"\n nodes :"<<list.count();
+                                                break;
+                                case 10:
+                                                list.search();
+                                                break;
+                                case 11:
+                                               exit(0);
   
-   default:
+                                default:
  
-           cout<<"\n Invalid Input";
+                                cout<<"\n Invalid Input";
 		
-		}
+		   }
 		cout << "\n Want to operate more? (y/n) ";
 		cin >> ch;
 	} while (ch == 'y');
