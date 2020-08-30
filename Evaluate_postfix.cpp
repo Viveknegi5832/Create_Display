@@ -1,3 +1,8 @@
+//Vivek singh negi
+//19_78066
+
+
+
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
@@ -207,7 +212,7 @@ int evaluate(string &s)
 int main()
 {
   string str;
-  cout<<"\n Enter the Postfix expression ";
+  cout<<"\n Enter the Postfix expression \n";
   getline(cin,str); 
   cout<<"\n result :"<<evaluate(str);
 }
