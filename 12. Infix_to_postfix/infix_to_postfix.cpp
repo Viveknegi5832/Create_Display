@@ -14,7 +14,7 @@ using namespace std;
 template <class T>
 class Node
 	{
-   public:
+                  public:
 		  T data;
 		  Node *next;
 	};
@@ -153,7 +153,7 @@ T Stack<T> :: topelement()
 
 int precedence(char ch)
 {
-	  if(ch=='^')
+  if(ch=='^')
   return 3;
   else if(ch=='*' || ch=='/' || ch=='%')
   return 2;
@@ -183,30 +183,31 @@ string infix_to_postfix(string infix)
  continue;
 
 		else if(isalnum(infix[i])) 
-      postfix += infix[i];
+                postfix = postfix + infix[i];
 		else if(infix[i] == '(') 
-      stack.push(infix[i]);
+                stack.push(infix[i]);
 		else if(infix[i] == ')')
 		  {
 	     		while(!stack.isEmpty() && stack.topelement() != '(')
 				    postfix = postfix + stack.pop();
 			     stack.pop();
-	   	}
+	   	  }
 		else
-		{
+		  {
 			    while(!stack.isEmpty() && precedence(infix[i]) < precedence(stack.topelement()))
 			   {
-			        	postfix += stack.pop();
-		    }
+			        	postfix = postfix + stack.pop();
+		           }
 		        	stack.push(infix[i]);			
-		}
+		  }
   
   
 
 	}
-	while(!stack.isEmpty())
-		postfix += stack.pop();
-	return postfix;
+	        while(!stack.isEmpty())
+		postfix = postfix + stack.pop();
+	        
+                return postfix;
 }
 
 int main()
