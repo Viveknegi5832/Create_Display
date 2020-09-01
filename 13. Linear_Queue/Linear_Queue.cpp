@@ -1,3 +1,6 @@
+//Vivek_singh_negi
+//19_78066
+
 #include<iostream>
 #include<string>
 using namespace std;
@@ -36,6 +39,9 @@ class Linear_Queue
    
 
 };
+
+/********function to check if queue is empty************/
+
    
    
 template <class T>
@@ -46,6 +52,10 @@ bool Linear_Queue<T> :: isEmpty()
    else
    return false;
 }
+
+
+
+/*********function to enter elements in the queue***********/
 
 
 template <class T>
@@ -88,6 +98,9 @@ do{
 }
 
 
+/************function to delete elements from queue*********/
+
+
 
 template <class T>
 T Linear_Queue<T> :: dequeue()
@@ -117,6 +130,9 @@ T Linear_Queue<T> :: dequeue()
 
 }
 
+/*********function to return first element of queue********/
+
+
 
 
 template <class T>
@@ -136,6 +152,8 @@ T Linear_Queue<T> :: firstelement()
 }
 
 
+
+/******function to display queue********/
 
 template <class T>
 void Linear_Queue<T> :: display()
@@ -160,6 +178,7 @@ void Linear_Queue<T> :: display()
 
 }
 
+/**********function to clear the queue**********/
 
 
 template <class T>
@@ -183,6 +202,9 @@ void Linear_Queue<T> :: clear()
 
 
 }
+
+/********main function*************/
+
 
 
 int main()
