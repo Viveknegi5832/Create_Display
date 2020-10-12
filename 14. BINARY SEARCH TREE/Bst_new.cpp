@@ -333,7 +333,7 @@ void Bst<T> :: recursive_postorder(Node* temp)
 
 
 
-/* Itterative preprder */
+/* Itterative preorder */
 
 
 
@@ -390,6 +390,37 @@ void Bst<T> :: itterative_inorder(Node* temp)
       }
 
 }
+
+/*  Itterative postorder */
+
+ 
+template <class T>
+void Bst<T> :: itterative_postorder(Node* ptr)
+    {
+        Stack <Node*> s1;
+        Stack <Node*> s2;
+        s1.push(ptr);
+        while(!s1.isEmpty())
+        {
+            ptr=s1.topelement();
+            s1.pop();
+            s2.push(ptr);
+            if(ptr->left!=NULL)
+            {
+            s1.push(ptr->left);
+            }
+            if(ptr->right!=NULL)
+            {
+            s1.push(ptr->right);
+            }
+        }
+        while(!s2.isEmpty())
+        {
+            cout<<s2.topelement()->info<<" ";
+            s2.pop();
+        }
+    }
+
 
 
 
@@ -456,7 +487,7 @@ int main()
 
  do{
      
-      cout << "\n1.Insert \n2.recursive_inorder \n3.recursive_preorder \n4.recursive_postorder \n5.Itterative preorder \n6.Itterative inorder \n7.search an element ";
+      cout << "\n1.Insert \n2.recursive_inorder \n3.recursive_preorder \n4.recursive_postorder \n5.Itterative preorder \n6.Itterative inorder \n7.Itterative postorder \n8.search an element ";
       cout << "\n\nEnter your choice : ";
       cin >> ch;
       
@@ -502,7 +533,14 @@ int main()
                b.itterative_inorder(b.root);
                cout << "\n-----------------\n";
                break;
-         case 7:
+        case 7:
+
+               cout<<"\nThe Itterative postorder is \n";
+               cout<<"\n----------------\n";
+               b.itterative_postorder(b.root);
+               cout<<"\n----------------\n";
+               break;
+        case 8:
         
                cout << "\nEnter the value to search : ";
                cin  >> b.n;
