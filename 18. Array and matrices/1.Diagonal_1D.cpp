@@ -101,6 +101,11 @@ int main()
     }
     cout << "\nDiagonal array for given elements would be \n";
     obj.display();
+    cout<<"\nEnter the indexes to retrieve \n\n";
+    int m,n;
+    cin>>m>>n;
+    int z = obj.retrieve (m,n);
+    cout<<"\nValue : "<<z;
     return 0;
 }
 
