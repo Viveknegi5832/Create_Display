@@ -96,7 +96,7 @@ int main()
     }
     
     
-    cout << "Enter Elements of lefttriangle\n";
+    cout << "Enter Elements of Lowertriangle\n";
     for(int i=1  ; i<=r ; i++)
     {
         for(int j=1 ; j<=i ; j++)
